@@ -1,14 +1,8 @@
-def twoNumberSum(array, targetSum):
-    ans = []
-    for i in range(len(array)):
+# O(n^2) time, O(1) space
 
-        try:
+def twoNumberSum(array, targetSum):
+    for i in range(len(array)):
             for j in range((i+1), len(array)):
                 if array[i] + array[j] == targetSum:
-                    ans.append(array[i])
-                    ans.append(array[j])
-                    return ans
-        except IndexError:
-            return []
-
+                    return[array[i], array[j]]
     return[]
