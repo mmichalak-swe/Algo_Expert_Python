@@ -14,7 +14,6 @@ def tournamentWinner(competitions, results):
 
         if scores[winning_team] > scores[current_best_team]:
             current_best_team = winning_team
-			
     return current_best_team
 
 
