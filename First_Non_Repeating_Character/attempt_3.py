@@ -1,3 +1,5 @@
+# O(n) time | O(1) space
+
 def firstNonRepeatingCharacter(string):
     checked = {}
 
