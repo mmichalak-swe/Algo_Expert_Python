@@ -1,3 +1,5 @@
+# O(nlog(n)) Time | O(1) space
+
 def minimumWaitingTime(queries):
     queries.sort()
     stop_len = len(queries) - 1
