@@ -19,3 +19,5 @@ def validStartingCity(distances, fuel, mpg):
                     return i
 
                 curr_city = (curr_city + 1) % num_of_cities
+
+    return -1
