@@ -5,7 +5,7 @@ def insertionSort(array):
         prev = array[i-1]
         
         if curr < prev:
-            for j in range(i):
+            for j in range(i): # not a correct implementation of insertion sort
                 if curr < array[j]:
                     array.pop(i)
                     array.insert(j, curr)
