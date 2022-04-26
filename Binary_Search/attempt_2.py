@@ -1,3 +1,5 @@
+# O(log(n)) time | O(1) space
+
 def binarySearch(array, target):
     left_idx = 0
     right_idx = len(array) - 1

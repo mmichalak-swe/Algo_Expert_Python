@@ -1,3 +1,5 @@
+# O(log(n)) time | O(1) space
+
 from math import floor
 
 def binarySearch(array, target):
