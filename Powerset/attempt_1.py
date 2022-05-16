@@ -1,3 +1,5 @@
+# O(n*2^n) time | YIKES space
+
 def powerset(array):
     ans = [[]]
     
