@@ -35,5 +35,3 @@ DIGIT_LOOKUP = {
     '8': ['t', 'u', 'v'],
     '9': ['w', 'x', 'y', 'z']
 }
-
-print(phoneNumberMnemonics("1905"))
