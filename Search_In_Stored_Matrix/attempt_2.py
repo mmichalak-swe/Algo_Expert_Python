@@ -1,5 +1,5 @@
-# O(n + m) time | O(1) space
-# where n is len of rows, m is len of cols
+# O(r + c) time | O(1) space
+# where r is len of rows, c is len of cols
 
 def searchInSortedMatrix(matrix, target):
     row = 0
