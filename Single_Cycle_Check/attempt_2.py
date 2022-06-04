@@ -1,3 +1,4 @@
+# O(n) time | O(1) space
 def hasSingleCycle(array):
     numElementsVisited = 0
     currentIdx = 0
