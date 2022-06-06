@@ -1,8 +1,9 @@
 #             SOUTH   EAST    NORTH    WEST
 DIRECTIONS = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
-# O(wh) time | O(wh) space where w is width of matrix,
+# O(wh) time | O(wh) space - where w is width of matrix,
 # h is height of matrix
+# OR O(n) time | O(n) space where n is total # of nodes
 def riverSizes(matrix):
 
     riverSizes = []
