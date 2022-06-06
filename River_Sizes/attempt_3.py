@@ -20,6 +20,7 @@ def riverSizes(matrix):
             
             size = 1
             nodesToSearch = deque()
+            nodesToSearch.append((row, col))
             getValidSearch(nodesToSearch, matrix, row, col, alreadyVisited)
             while len(nodesToSearch) > 0:
                 currNode = nodesToSearch.popleft()
