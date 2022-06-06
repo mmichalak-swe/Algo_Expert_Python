@@ -39,8 +39,7 @@ def riverSizes(matrix):
 
 def getValidSearch(nodesToSearch, matrix, row, col, alreadyVisited):
     for i in range(4): # number/length of DIRECTIONS
-        new_row = row + DIRECTIONS[i][0]
-        new_col = col + DIRECTIONS[i][1]
+        new_row , new_col = row + DIRECTIONS[i][0], col + DIRECTIONS[i][1]
         if not (0 <= new_row < len(matrix)) or not (0 <= new_col < len(matrix[0])):
             continue
         else:
