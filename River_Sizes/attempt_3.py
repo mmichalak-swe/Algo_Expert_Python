@@ -1,3 +1,5 @@
+from collections import deque
+
 #             SOUTH   EAST    NORTH    WEST
 DIRECTIONS = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
@@ -17,10 +19,10 @@ def riverSizes(matrix):
             alreadyVisited[row][col] = True
             
             size = 1
-            nodesToSearch = []
+            nodesToSearch = deque()
             getValidSearch(nodesToSearch, matrix, row, col, alreadyVisited)
             while len(nodesToSearch) > 0:
-                currNode = nodesToSearch.pop(0)
+                currNode = nodesToSearch.popleft()
                 new_x = currNode[0]
                 new_y = currNode[1]
                 if matrix[new_x][new_y] == 1 and not alreadyVisited[new_x][new_y]:
