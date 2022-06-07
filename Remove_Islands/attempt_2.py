@@ -29,8 +29,7 @@ def findAttachedOnes(matrix, row, col, num_rows, num_cols):
     nodesToExplore = deque()
     nodesToExplore.append((row, col))
     while len(nodesToExplore) > 0:
-        curr = nodesToExplore.popleft()
-        currRow, currCol = curr[0], curr[1]
+        currRow, currCol = nodesToExplore.popleft()
         for i in range(4):
             new_row = currRow + DIRECTIONS[i][0]
             new_col = currCol + DIRECTIONS[i][1]
