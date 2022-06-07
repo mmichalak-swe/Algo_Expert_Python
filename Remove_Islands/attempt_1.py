@@ -1,6 +1,7 @@
 from collections import deque
 DIRECTIONS = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
+# O(wh) time | O(wh) space where w, h are the width, height of the input matrix
 def removeIslands(matrix):
     if len(matrix) < 3 or len(matrix[0]) < 3:
         return matrix
