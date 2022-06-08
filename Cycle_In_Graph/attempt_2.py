@@ -26,3 +26,4 @@ def recursiveCycle(edges, startIdx, dfsState):
             return True
 
     dfsState[startIdx] = 2
+    return False
