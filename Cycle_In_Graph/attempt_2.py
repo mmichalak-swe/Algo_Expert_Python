@@ -3,8 +3,9 @@
 def cycleInGraph(edges):
     dfsState = [0] * len(edges)
     for i in range(len(edges)):
-        if recursiveCycle(edges, i, dfsState):
-            return True
+        if dfsState[i] == 0:
+            if recursiveCycle(edges, i, dfsState):
+                return True
     return False
 
 
