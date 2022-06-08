@@ -1,5 +1,3 @@
-from collections import deque
-
 # O(v + e) time | O(v) space, where n is the length of the edges list
 # or, n = the number of vertices
 def cycleInGraph(edges):
