@@ -1,5 +1,6 @@
 from collections import deque
 
+# O(wh) time | O(wh) space, where w = width, h = height of matrix
 def minimumPassesOfMatrix(matrix):
     reqPasses = 0
     queueOne = deque()
