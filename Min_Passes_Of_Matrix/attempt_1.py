@@ -16,7 +16,6 @@ def minimumPassesOfMatrix(matrix):
                 queueOne.append((row, col))
 
     count = 1
-
     while len(queueOne) or len(queueTwo):
         reqPasses += 1
         if count % 2 == 1:
