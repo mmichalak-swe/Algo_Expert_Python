@@ -40,18 +40,6 @@ def isValid(row, col, x, y):
     return (0 <= row < x) and (0 <= col < y)
 
 
-def queueJuggle(matrix, fromQueue, toQueue):
-    DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-    while len(fromQueue):
-        curr = fromQueue.popleft()
-        for direction in DIRECTIONS:
-            searchRow = curr[0] + direction[0]
-            searchCol = curr[1] + direction[1]
-            if isValid(searchRow, searchCol, len(matrix), len(matrix[0])) and matrix[searchRow][searchCol] < 0:
-                matrix[searchRow][searchCol] *= -1
-                toQueue.append((searchRow, searchCol))
-
-
 def checkPositives(matrix):
     for row in matrix:
         for num in row:
