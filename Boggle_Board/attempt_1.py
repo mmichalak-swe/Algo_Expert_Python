@@ -22,9 +22,8 @@ def boggleBoard(board, words):
 
 def validWord(board, visited, output, node, row, col, potentialWord):
     if '*' in node:
-        x = ''.join(potentialWord)
-        if x not in output:
-            output.append(''.join(potentialWord))
+        if node['*'] not in output:
+            output.append(node['*'])
             if len(node) == 1:
                 del potentialWord[-1]
                 return
