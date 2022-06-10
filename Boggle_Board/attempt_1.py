@@ -15,17 +15,16 @@ def boggleBoard(board, words):
             if letter in trie.root:
                 node = trie.root[letter]
                 visited[row][col] = True
-                validWord(board, visited, output, node, row, col, [letter])
+                validWord(board, visited, output, node, row, col)
                 visited[row][col] = False
     return output
 
 
-def validWord(board, visited, output, node, row, col, potentialWord):
+def validWord(board, visited, output, node, row, col):
     if '*' in node:
         if node['*'] not in output:
             output.append(node['*'])
             if len(node) == 1:
-                del potentialWord[-1]
                 return
 
     for direction in DIRECTIONS:
@@ -41,11 +40,8 @@ def validWord(board, visited, output, node, row, col, potentialWord):
 
         for candidate in node.keys():
             if potentialLetter == candidate:
-                potentialWord.append(potentialLetter)
-                validWord(board, visited, output, node[potentialLetter], newRow, newCol, potentialWord)
+                validWord(board, visited, output, node[potentialLetter], newRow, newCol)
         visited[newRow][newCol] = False
-    if potentialWord:
-        del potentialWord[-1]
 
 
 class Trie:
