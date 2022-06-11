@@ -1,5 +1,7 @@
 DIRECTIONS = [(0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1)]
 
+# O(ws + nm*8^s) time | O(ws + nm) where w is # of words in words list, s is length
+# of the longest word in the list, n is the width of the board, m is the height
 def boggleBoard(board, words):
     trie = Trie()
     for word in words:
