@@ -4,7 +4,6 @@ def boggleBoard(board, words):
     trie = Trie()
     for word in words:
         trie.add(word)
-    print(trie.root)
     output = []
     visited = [[False for letter in row] for row in board]
 
