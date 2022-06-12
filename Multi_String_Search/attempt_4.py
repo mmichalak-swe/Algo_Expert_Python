@@ -1,6 +1,6 @@
 
 def multiStringSearch(bigString, smallStrings):
-    output = [False for _ in smallStrings]
+    output = {}
     trie = Trie()
     for word in smallStrings:
         trie.insert(word)
@@ -20,11 +20,11 @@ def multiStringSearch(bigString, smallStrings):
             else:
                 break
             if '*' in node:
-                output[smallStrings.index(node['*'])] = True
+                output[node['*']] = True
             j += 1
         idx += 1
 
-    return output
+    return [string in output for string in smallStrings]
 
 class Trie:
     def __init__(self):
