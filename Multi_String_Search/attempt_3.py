@@ -1,7 +1,7 @@
 def multiStringSearch(bigString, smallStrings):
     output = [False for _ in smallStrings]
     trie = makeTrieString(smallStrings)
-    # print(trie)
+
     idx = 0
     while idx < len(bigString):
         char = bigString[idx]
