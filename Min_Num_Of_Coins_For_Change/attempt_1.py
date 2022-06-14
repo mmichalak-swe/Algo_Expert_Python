@@ -1,6 +1,6 @@
 # O(nd) time | O(n) space, where n is n, or num of amounts from 0 to n inclusive,
 # and d is # of denoms
- def minNumberOfCoinsForChange(n, denoms):
+def minNumberOfCoinsForChange(n, denoms):
     amounts = [1000000 for _ in range(n+1)]
     amounts[0] = 0
 
