@@ -1,4 +1,4 @@
-# O(rc) time | O(min(len(str1), len(str2))) space
+# O(nm) time | O(min(len(str1), len(str2))) space
 def levenshteinDistance(str1, str2):
     small = str1 if len(str1) < len(str2) else str2
     large = str2 if len(str2) > len(str1) else str1
