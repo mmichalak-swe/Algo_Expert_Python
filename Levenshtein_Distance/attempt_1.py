@@ -1,4 +1,4 @@
-# O(rc) time | O(rc) space
+# O(nm) time | O(nm) space - where n and m are lengths of str1 and str2
 def levenshteinDistance(str1, str2):
     board = [[None for c in range(len(str2) + 1)] for r in range(len(str1) + 1)]
 
