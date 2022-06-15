@@ -1,4 +1,5 @@
-# O(rc) time | O(min(len(str1), len(str2))) space
+# O(nm) time | O(min(len(n), len(m))) space - where n and m are the lengths of str 1,
+# str 2, if len(str1) < len(str2). Attempt 3 fixes this constraint
 def levenshteinDistance(str1, str2):
     board = [[c for c in range(len(str2) + 1)] for r in range(2)]
 
