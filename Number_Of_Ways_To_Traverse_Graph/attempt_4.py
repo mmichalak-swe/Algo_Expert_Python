@@ -1,5 +1,5 @@
 # BONUS Solution - Math Trick
-# O(wh) time | O(1) space
+# O(w + h) time | O(1) space
 from math import factorial
 
 def numberOfWaysToTraverseGraph(width, height):
