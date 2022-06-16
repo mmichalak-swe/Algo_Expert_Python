@@ -1,3 +1,4 @@
+# Optimized Dynamic Programming Solution
 # O(wh) time | O(min(w, h)) space, where w, h are width, height respectively
 def numberOfWaysToTraverseGraph(width, height):
     small = width if width < height else height

@@ -1,3 +1,4 @@
+# Dynamic Programming Solution
 # O(wh) time | O(wh) space, where w, h are width, height respectively
 def numberOfWaysToTraverseGraph(width, height):
     graph = [[1 for h in range(1, height+1)] for w in range(width)]
