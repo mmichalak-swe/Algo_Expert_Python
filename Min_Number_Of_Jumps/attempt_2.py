@@ -19,4 +19,4 @@ def minNumberOfJumps(array):
             numJumps += 1
             steps = farthest - idx
     
-    return numJumps
+    return numJumps + 1
