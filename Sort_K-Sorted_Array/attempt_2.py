@@ -1,0 +1,90 @@
+# Optimal Solution
+# O(n*log(k)) time | O(k) space
+
+def sortKSortedArray(array, k):
+    minHeap = MinHeap(array[:min(k+1, len(array))]) # avoid index errors
+
+    nextIdx = 0
+    for i in range(k + 1, len(array)):
+        minElement = minHeap.remove()
+        array[nextIdx] = minElement
+        nextIdx += 1
+
+        currElement = array[i]
+        minHeap.insert(currElement)
+
+    while not minHeap.isEmpty():
+        minElement = minHeap.remove()
+        array[nextIdx] = minElement
+        nextIdx += 1
+    
+    return array
+
+
+class MinHeap:
+    def __init__(self, array):
+        self.heap = self.buildHeap(array)
+
+    def isEmpty(self):
+        return len(self.heap) == 0
+
+    # O(n) time, start at parent nodes and call sift down | O(1) space
+    def buildHeap(self, array):
+        firstParent = (len(array) - 2) // 2
+        for idx in range(firstParent, -1, -1):
+            self.siftDown(idx, array)
+        return array
+
+    # O(log(n)) time | O(1) space, every time node is swapped, half of tree eliminated
+    def siftDown(self, currIdx, heap):
+        cOne = self.childOne(currIdx, heap)
+        cTwo = self.childTwo(currIdx, heap)
+        while cOne is not None or cTwo is not None:
+            try:
+                idxToSwap = cOne if heap[cOne] < heap[cTwo] else cTwo
+            except:
+                idxToSwap = cOne if cTwo is None else cTwo
+
+            if heap[idxToSwap] < heap[currIdx]:
+                self.swap(currIdx, idxToSwap, heap)
+                currIdx = idxToSwap
+                cOne = self.childOne(currIdx, heap)
+                cTwo = self.childTwo(currIdx, heap)
+            else:
+                break
+
+    # O(log(n)) time | O(1) space, every time node is swapped, half of tree eliminated
+    def siftUp(self, currIdx, heap):
+        parentIdx = self.getParent(currIdx)
+        while currIdx > 0 and heap[currIdx] < heap[parentIdx]:
+            self.swap(currIdx, parentIdx, heap)
+            currIdx = parentIdx
+            parentIdx = self.getParent(currIdx)
+
+    # O(1) time
+    def peek(self):
+        return self.heap[0]
+
+    def remove(self):
+        self.swap(0, -1, self.heap)
+        output = self.heap.pop()
+        self.siftDown(0, self.heap)
+        return output
+
+    def insert(self, value):
+        self.heap.append(value)
+        self.siftUp(len(self.heap) - 1, self.heap)
+
+    def swap(self, idx1, idx2, heap):
+        heap[idx1], heap[idx2] = heap[idx2], heap[idx1]
+
+    def childOne(self, idx, heap):
+        output = (2*idx + 1)
+        return output if output < len(heap) else None
+
+    def childTwo(self, idx, heap):
+        output = (2*idx + 2)
+        return output if output < len(heap) else None
+
+    def getParent(self, idx):
+        return ((idx-1) // 2)
