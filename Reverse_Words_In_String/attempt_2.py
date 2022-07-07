@@ -2,7 +2,7 @@
 def reverseWordsInString(string):
     wordList = []
     idx = 0
-    while idx != len(string):
+    while idx < len(string):
         if string[idx] == ' ':
             wordList.append(' ')
             idx += 1
