@@ -15,7 +15,9 @@ def threeNumberSum(array, targetSum):
                 rightPointer -= 1
             elif currSum < targetSum:
                 leftPointer += 1
-            else:
+            elif currSum > targetSum:
                 rightPointer -= 1
+            # else:
+                # rightPointer -= 1
 
     return output
