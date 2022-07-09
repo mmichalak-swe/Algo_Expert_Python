@@ -19,12 +19,12 @@ def findLocations(string, substring):
 
 
 def flatten(locations):
-    flatLocations = []
+    if not locations:
+        return []
     if len(locations) == 1:
         return [locations[0][0], locations[0][1]]
-    elif not locations:
-        return []
     else:
+        flatLocations = []
         start, end = locations[0][0], locations[0][1]
         idx = 1
         while idx < len(locations):
