@@ -1,3 +1,6 @@
+# O(n^2 + nm) time | O(n) space, where n is the length of the input string, and
+# m is the length of the substring
+# time complexity is O(n) * O(n+m), one loop through, at each idx, call .find()
 def underscorifySubstring(string, substring):
     locations = []
 

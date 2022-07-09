@@ -14,7 +14,7 @@ def findLocations(string, substring):
             locations.append([nextIdx, nextIdx + len(substring)])
             startIdx = nextIdx + 1
         else:
-             break   
+             break
     return locations
 
 

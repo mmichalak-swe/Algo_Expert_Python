@@ -1,3 +1,5 @@
+# O(n^2 + nm) time | O(n) space, where n is the length of the input string, and
+# m is the length of the substring
 def underscorifySubstring(string, substring):
     locations = []
 
