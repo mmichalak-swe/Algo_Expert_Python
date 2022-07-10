@@ -45,8 +45,8 @@ def underscore(string, locations):
     underIdx = 0
     for i in range(len(string)):
         if underIdx > len(locations) - 1:
-            output.append(string[i])
-            continue
+            output.append(string[i:])
+            break
         
         if i == locations[underIdx]:
             output.append('_')
