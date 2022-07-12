@@ -19,6 +19,7 @@ def preOrderTraverse(tree, array):
     preOrderTraverse(tree.right, array)
     return array
 
+
 def postOrderTraverse(tree, array):
     if tree is None:
         return
