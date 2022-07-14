@@ -15,7 +15,7 @@ class TreeInfo:
 # O(h + k) time | O(h) space, where h is the height of the BST
 # must go all the way down before visiting any nodes, thus h time + k
 def findKthLargestValueInBst(tree, k):
-    treeInfo = TreeInfo(0, -1)
+    treeInfo = TreeInfo(0, None)
     findKthHelper(tree, k, treeInfo)
     return treeInfo.lastValue
 
