@@ -6,6 +6,7 @@ class BST:
         self.right = right
 
 # O(d) time | O(1) space, where d is the distance between nodeOne and nodeThree
+# time can be as bad as O(h) if d is equal to h
 def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
     return validateThreeNodesHelper(nodeOne, nodeTwo, nodeThree) or validateThreeNodesHelper(nodeThree, nodeTwo, nodeOne)
 
