@@ -8,8 +8,11 @@ def quickSort(array):
 
 
 def quickSortHelper(array, startIdx, endIdx):
+    # print(startIdx, endIdx)
     if startIdx >= endIdx:
         return
+
+    # print(array[startIdx:endIdx + 1], startIdx, endIdx)
 
     pivotIdx = startIdx
     leftIdx = startIdx + 1
@@ -24,6 +27,7 @@ def quickSortHelper(array, startIdx, endIdx):
             rightIdx -= 1
 
     swap(array, pivotIdx, rightIdx)
+    # print(array)
     rightSideSmaller = rightIdx - 1 - startIdx > endIdx - (rightIdx) + 1
 
     if rightSideSmaller:
