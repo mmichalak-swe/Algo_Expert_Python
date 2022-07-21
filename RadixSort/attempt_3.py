@@ -1,3 +1,6 @@
+# O(d(n+b)) time | O(n + b) space, where d is the num of digits,
+# in the largest number in the array. n is the length of the input array
+# b is the num of digits in the number system (in this case, 10 (base 10))
 def radixSort(array):
     if len(array) <= 1:
         return array
