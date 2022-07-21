@@ -7,15 +7,15 @@ def radixSort(array):
 
     maxDigit = len(str(max(array)))
 
-    for digit in range(0, maxDigit):
+    for digit in range(0, maxDigit): # O(d) time
         array = countingSort(array, digit)
 
     return array
 
 
 def countingSort(array, digit):
-    sortedArray = [0] * len(array)
-    counts = [0 for num in range(10)] # range of base number system
+    sortedArray = [0] * len(array) # O(n) time
+    counts = [0 for num in range(10)] # range of base number system, O(b) time
 
     digitColumn = 10 ** digit
     for num in array:
