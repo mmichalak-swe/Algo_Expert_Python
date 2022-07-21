@@ -7,7 +7,6 @@ def radixSort(array):
 
     maxDigit = len(str(max(array)))
 
-    # must start at 0 for this solution to work, not 1
     for digit in range(0, maxDigit):
         array = countingSort(array, digit)
 
@@ -26,9 +25,9 @@ def countingSort(array, digit):
     for i in range(1, len(counts)):
         counts[i] += counts[i-1]
 
-    for idx in range(len(array) - 1, -1, -1):
-        numDigit = (array[idx] // digitColumn) % 10
+    for i in range(len(array) - 1, -1, -1):
+        numDigit = (array[i] // digitColumn) % 10
         counts[numDigit] -= 1
-        sortedArray[counts[numDigit]] = array[idx]
+        sortedArray[counts[numDigit]] = array[i]
     
     return sortedArray
