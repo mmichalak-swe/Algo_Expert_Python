@@ -4,7 +4,7 @@
 def longestPeak(array):
     maxPeak = 0
     i = 1
-    while i < len(array) - 1:
+    while i < len(array) - 1: # key to this solution being most efficient (vs for)
         if array[i] <= array[i-1] or array[i] <= array[i+1]:
             i += 1 # skip value after not finding a peak
             continue
