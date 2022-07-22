@@ -3,13 +3,16 @@
 # add 3 on line 11 to the valid points from lines 9-10.
 def longestPeak(array):
     maxPeak = 0
-    for i in range(1, len(array) - 1):
+    i = 1
+    while i < len(array) - 1:
         if array[i] <= array[i-1] or array[i] <= array[i+1]:
+            i += 1 # skip value after not finding a peak
             continue
         leftValid = calcLeft(array, i - 1, i - 2)
         rightValid = calcRight(array, i + 1, i + 2)
         currPeak = leftValid + 3 + rightValid
         maxPeak = max(currPeak, maxPeak)
+        i += rightValid + 2 # skip past found current peak to next candidate
     return maxPeak
 
 
