@@ -11,7 +11,7 @@ def longestPeak(array):
         rightValid = calcRight(array, i + 1, i + 2)
         currPeak = leftValid + 3 + rightValid
         maxPeak = max(currPeak, maxPeak)
-        i = rightValid + 1 # skip past found current peak to next candidate
+        i = rightValid + 2 # skip past found current peak to next candidate
     return maxPeak
 
 
