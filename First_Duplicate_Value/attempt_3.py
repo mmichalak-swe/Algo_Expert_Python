@@ -1,3 +1,5 @@
+# Best Solution
+# O(n) time | O(1) space
 def firstDuplicateValue(array):
     for num in array:
         if array[abs(num) - 1] < 0:
