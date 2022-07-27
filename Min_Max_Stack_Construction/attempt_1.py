@@ -1,26 +1,24 @@
-# Feel free to add new properties and methods to the class.
+# Naive solution using built-in methods
 class MinMaxStack:
+    def __init__(self):
+        self.stack = []
 
-    ans = []
-
+    # O(1) time | O(1) space
     def peek(self):
-        return self.ans[0]
+        return self.stack[len(self.stack) - 1]
 
+    # O(1) time | O(1) space
     def pop(self):
-        return self.ans.pop(0)
+        return self.stack.pop()
 
+    # O(1) time | O(1) space
     def push(self, number):
-        self.ans.insert(0, number)
-        pass
+        self.stack.append(number)
 
+    # O(n) time | O(1) space
     def getMin(self):
-        return min(self.ans)
+        return min(self.stack)
 
+    # O(n) time | O(1) space
     def getMax(self):
-        return max(self.ans)
-
-x = MinMaxStack()
-
-x.push(2)
-print(x.getMin())
-print(x.getMax())
+        return max(self.stack)
