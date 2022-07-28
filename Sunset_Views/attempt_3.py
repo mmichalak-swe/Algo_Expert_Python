@@ -15,4 +15,4 @@ def sunsetViews(buildings, direction):
         views.append(idx)
         idx += step
         
-    return views if direction == 'EAST' else list(reversed(views))
+    return views if direction == 'EAST' else views[::-1]
