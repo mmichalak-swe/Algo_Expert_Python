@@ -1,6 +1,6 @@
 # Optimal Solution
 # O(n) time | O(n) space, where n is the length of the input array
-# time is 2n , which reduces to n
+# time is ~2n (max 4n) , which reduces to n
 def nextGreaterElement(array):
     output = [-1 for num in array]
     stack = []
