@@ -5,11 +5,17 @@ def largestRectangleUnderSkyline(buildings):
     maxArea = 0
 
     for i in range(len(buildings)):
-        minHeight = buildings[i]
-        maxArea = max(maxArea, buildings[i])
-        for j in range(i + 1, len(buildings)):
-            minHeight = min(minHeight, buildings[j])
-            currArea = ((j - i) + 1) * minHeight
-            maxArea = max(maxArea, currArea)
+        currHeight = buildings[i]
+
+        leftIdx = i
+        while leftIdx > 0 and buildings[leftIdx - 1] >= currHeight:
+                leftIdx -= 1
+
+        rightIdx = i
+        while rightIdx < len(buildings) - 1 and buildings[rightIdx + 1] >= currHeight:
+                rightIdx += 1
+        
+        currMaxArea = (rightIdx - leftIdx + 1) * currHeight
+        maxArea = max(maxArea, currMaxArea, currHeight)
 
     return maxArea
