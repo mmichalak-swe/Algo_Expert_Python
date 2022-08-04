@@ -1,4 +1,4 @@
-# Brute-Force Solution
+# Brute-Force Solution (not valid, see attempt 2)
 # O(n^2) time | O(1) space
 def largestRectangleUnderSkyline(buildings):
 
