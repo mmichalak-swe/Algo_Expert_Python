@@ -15,12 +15,12 @@ def largestRange(array):
             upperNum = num + 1
             currentRun = 1
     
-            while lowerNum in visited and visited[lowerNum] == False:
+            while lowerNum in visited:
                 visited[lowerNum] = True
                 currentRun += 1
                 lowerNum -= 1
 
-            while upperNum in visited and visited[upperNum] == False:
+            while upperNum in visited:
                 visited[upperNum] = True
                 currentRun += 1
                 upperNum += 1
