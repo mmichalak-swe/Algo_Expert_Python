@@ -17,24 +17,22 @@ def zigzagTraverse(array):
                 row += directions['dL'][0]
                 col += directions['dL'][1]
             else:
+                direction = 'uR'
                 if row == maxRow:
                     col += 1
-                    direction = 'uR'
                 else:
                     row += 1
-                    direction = 'uR'
     
         elif direction == 'uR':
             if isValid(row + directions['uR'][0], col + directions['uR'][1], maxRow, maxCol):
                 row += directions['uR'][0]
                 col += directions['uR'][1]
             else:
+                direction = 'dL'
                 if col == maxCol:
                     row += 1
-                    direction = 'dL'
                 else:
                     col += 1
-                    direction = 'dL'
 
     return output
 
