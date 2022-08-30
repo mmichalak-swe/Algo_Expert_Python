@@ -1,17 +1,13 @@
+# O(n + m) time | O(m) space, where n is the len of s, m is the len of t
 def minWindow(s, t):
         t_dict = {}
         have_dict = {}
         
         for char in t:
-            if char in t_dict:
-                t_dict[char] += 1
-            else:
-                t_dict[char] = 1
-
+            t_dict[char] = 1 + t_dict.get(char, 0)
             have_dict[char] = 0
         
-        need = len(t_dict)
-        have = 0
+        have, need = 0, len(t_dict)
 
         left, right = 0, 0
         output = [float('-inf'), float('inf')]
