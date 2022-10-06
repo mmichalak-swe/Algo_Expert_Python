@@ -23,6 +23,7 @@ class LRUCache(object):
         elif len(self.array) >= self.capacity:
             # Delete oldest
             self.array.popitem(0)
+            # or self.array.popitem(last=False)
         self.array[key] = value
 
 # Your LRUCache object will be instantiated and called as such:
