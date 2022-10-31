@@ -17,10 +17,12 @@ class Solution:
 
             direction %= 4
         
-        if not xPos and not yPos: # hasn't moved
-            return True
-        else:
-            if direction:         # moved and direction changed
-                return True
-            else:                 # moved and direction didn't change
-                return False
+        return (xPos, yPos) == (0, 0) or direction != 0
+        
+        # if not xPos and not yPos: # hasn't moved
+        #     return True
+        # else:
+        #     if direction:         # moved and direction changed
+        #         return True
+        #     else:                 # moved and direction didn't change
+        #         return False
