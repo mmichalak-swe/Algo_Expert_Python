@@ -9,30 +9,29 @@ class BinaryTree:
 
 
 class TreeInfo:
-    def __init__(self, isBalanced, height):
-        self.isBalanced = isBalanced
+    def __init__(self, is_balanced, height):
+        self.is_balanced = is_balanced
         self.height = height
 
 
-def heightBalancedBinaryTree(tree):
-    treeInfo = getTreeInfo(tree)
-    return treeInfo.isBalanced
+def height_balanced_binary_tree(tree):
+    tree_info = get_tree_info(tree)
+    return tree_info.is_balanced
 
 
-def getTreeInfo(node):
+def get_tree_info(node):
     if node is None:
         return TreeInfo(True, -1)
 
-    leftSubtreeInfo = getTreeInfo(node.left)
-    rightSubtreeInfo = getTreeInfo(node.right)
-    
-    isBalanced = (
-        leftSubtreeInfo.isBalanced 
-        and rightSubtreeInfo.isBalanced 
-        and abs(leftSubtreeInfo.height - rightSubtreeInfo.height) <= 1
+    left_subtree_info = get_tree_info(node.left)
+    right_subtree_info = get_tree_info(node.right)
+
+    is_balanced = (
+        left_subtree_info.is_balanced
+        and right_subtree_info.is_balanced
+        and abs(left_subtree_info.height - right_subtree_info.height) <= 1
     )
 
-    height = max(leftSubtreeInfo.height, rightSubtreeInfo.height) + 1
-    
-    return TreeInfo(isBalanced, height)
+    height = max(left_subtree_info.height, right_subtree_info.height) + 1
 
+    return TreeInfo(is_balanced, height)
