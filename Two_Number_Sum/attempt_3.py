@@ -1,18 +1,18 @@
 # O(n*log(n)) time, O(1) space
 
-def twoNumberSum(array, targetSum):
+def two_number_sum(array: list[int], target_sum: int) -> list[int]:
     array.sort()
 
     left = 0
     right = len(array) - 1
-	
+
     while left < right:
-        currentSum = array[left] + array[right]
-        if (currentSum == targetSum):
+        current_sum = array[left] + array[right]
+        if current_sum == target_sum:
             return [array[left], array[right]]
-        elif currentSum < targetSum:
+        if current_sum < target_sum:
             left += 1
-        elif currentSum > targetSum:
+        elif current_sum > target_sum:
             right -= 1
 
     return []

@@ -1,12 +1,11 @@
 # O(n) time, O(n) space
 
-def twoNumberSum(array, targetSum):
-    
-	ans = {}
-	
-	for num in array:
-		if targetSum - num in ans:
-			return [num, targetSum - num]
-		else:
-			ans[num] = True
-	return []
+def two_number_sum(array: list[int], target_sum: int) -> list[int]:
+
+    ans = {}
+
+    for num in array:
+        if target_sum - num in ans:
+            return [num, target_sum - num]
+        ans[num] = True
+    return []
